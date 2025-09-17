@@ -15,6 +15,7 @@ const Body = () => {
   const fetchProfile = async () => {
     try {
       if (userData) return
+      console.log("host", location.host)
       const result = await axios.get(`${BASE_URL}/users/me`, { withCredentials: true })
       dispatch(addUser(result.data.data))
       return navigate("/")

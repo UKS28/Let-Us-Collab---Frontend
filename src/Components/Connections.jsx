@@ -27,8 +27,8 @@ const Connections = () => {
 
     return (
        <>
-        {connections.map(entry => 
-        <div className="card bg-base-100 shadow-md w-96 p-4 flex flex-row items-center gap-4 mx-auto my-10">
+        {connections.map((entry, index) => 
+        <div key = {index} className="card bg-base-100 shadow-md w-96 p-4 flex flex-row items-center gap-4 mx-auto my-10">
             {/* Avatar */}
             <div className="w-20 h-20">
                 <img
