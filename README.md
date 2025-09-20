@@ -13,3 +13,5 @@ TODO :
 
 - ZOOM OUT CARD FOR VIEW THE FULL PROFILE
 - Error Page.
+
+- if not data or null data then show shimmer.

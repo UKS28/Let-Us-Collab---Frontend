@@ -33,7 +33,7 @@ const Body = () => {
   return (
     <div>
       <Navbar />
-      <div className='pb-10 px-5'>
+      <div className='pb-10 pr-5'>
         <Outlet />
       </div>
       <Footer />

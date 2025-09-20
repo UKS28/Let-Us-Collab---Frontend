@@ -52,8 +52,9 @@ const PreferenceEdit = () => {
     }
   };
 
+  // shimmer
   if (!form) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/" replace />
   }
 
   return (

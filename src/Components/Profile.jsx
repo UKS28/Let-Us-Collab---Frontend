@@ -23,7 +23,7 @@ const Profile = () => {
   }, [])
 
   return (
-    <div className="flex flex-row min-h-screen">
+    <div className="flex flex-row min-h-screen ml-0">
       {/* Sidebar */}
       <div className="flex flex-col w-40 bg-base-200 p-4 gap-2">
         <div

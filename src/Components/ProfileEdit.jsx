@@ -38,7 +38,14 @@ const ProfileEdit = () => {
     }
   };
 
-  if (!user) return navigate("/")
+  // shimmer
+  if (!user) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <span className="loading loading-bars loading-xl"></span>
+      </div>
+    )
+  }
   return (
     <div className="p-6 w-full">
       <h2 className="text-xl font-bold mb-4">Edit Profile</h2>

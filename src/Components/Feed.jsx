@@ -9,31 +9,37 @@ const Feed = () => {
   const feed = useSelector((store) => store.feed)
   const user = useSelector((store) => store.user)
   const dispatch = useDispatch()
-    
   const getFeed = async () => {
-    if(feed) return
+    if (feed) return
     try {
-        const result = await axios.get(`${BASE_URL}/user/me/feeds`, {withCredentials: true})
-        dispatch(addFeed(result.data.data))
-    } catch( err) {
-        console.error(err)
+      const result = await axios.get(`${BASE_URL}/user/me/feeds`, { withCredentials: true })
+      dispatch(addFeed(result.data.data))
+    } catch (err) {
+      console.error(err)
     }
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     getFeed()
   }, [])
 
-  if(!feed) return
-  if(feed.length == 0)
+  // shimmer
+  if (!feed) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <span className="loading loading-bars loading-xl"></span>
+      </div>
+    )
+
+  }
+  if (feed.length == 0)
     return <h1 className="flex justify-center my-10">No new users founds!</h1>;
 
   return (
-    feed  && (
-        
-        <div className="flex justify-center my-10">
-            <UserCard data = {feed[0]} />
-        </div>
+    feed && (
+      <div className="flex justify-center my-10">
+        <UserCard data={feed[0]} />
+      </div>
     )
   )
 }

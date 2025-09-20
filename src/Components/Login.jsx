@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import { addUser } from '../Utils/userSlice'
 import { BASE_URL } from '../Utils/appConstants'
 const Login = () => {
-  const [email, setEmail] = useState("aman.verma@gmail.com")
-  const [password, setPassword] = useState("Test@1234")
+  const [email, setEmail] = useState("ujjwalsingh@123gmail.com")
+  const [password, setPassword] = useState("ujjwal@123")
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [phoneNumber, setPhoneNumber] = useState("")

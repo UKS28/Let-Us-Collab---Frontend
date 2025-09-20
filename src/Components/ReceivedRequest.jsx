@@ -31,7 +31,14 @@ const ReceivedRequest = () => {
         fetchRequest()
     }, [])
 
-    if (!request) return
+    // shimmer
+    if (!request) {
+        return (
+            <div className="flex items-center justify-center h-screen">
+                <span className="loading loading-bars loading-xl"></span>
+            </div>
+        )
+    }
     if (request.length === 0) return <p>No More Requests</p>
 
     return (
